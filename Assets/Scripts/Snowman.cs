@@ -9,6 +9,7 @@ public class Snowman : MonoBehaviour
     public GameObject head;
     public GameObject body;
     public GameObject leg;
+    public ParticleSystem particlessnow;
     public TextMeshProUGUI numberhead;
     public TextMeshProUGUI numberbody;
     public TextMeshProUGUI numberleg;
@@ -58,11 +59,6 @@ public class Snowman : MonoBehaviour
             {
                 backgroundmusic.clip = musiclist[i];
                 backgroundmusic.Play();
-            }
-
-            else
-            {
-                Debug.Log("иначе");
             }
         }
     }
@@ -150,6 +146,18 @@ public class Snowman : MonoBehaviour
     {
         leg.transform.localScale = new Vector3(value, value, value);
         numberleg.text = leg.transform.localScale.y.ToString("0.0");
+    }
+
+    public void SnowActivate(bool trueorfalse)
+    {
+       if(trueorfalse == true)
+        {
+            particlessnow.Play();
+        }
+        else
+        {
+            particlessnow.Stop();
+        }
     }
 
     //void Update()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveToSnowman : MonoBehaviour
 {
-    public Transform target; // target = цель
+    public Transform target; 
 
 
     void Update()
